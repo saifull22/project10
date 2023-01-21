@@ -13,7 +13,7 @@ class CustomerController extends Controller
 public function customerlist(){
 
 //return view('backend.page.customerlist');
-$customer=customer::all();
+$customer=customer::paginate(3);
 return view('backend.page.customer.customerlist', compact('customer'));
 
 }
@@ -33,7 +33,7 @@ public function submit(Request $request)
     'password'=>$request->password,
 
    ]);
-   return redirect()->route('bb.customer.list');
+   return redirect()->route('bb.customer.list')->with('message','Created Successfully');
 
 }
     public function view($id)
@@ -58,7 +58,7 @@ public function updateCustomer(Request $request,$id)
 
         'email'=>$request->email,
 
-     'password'=>$request->password
+     'password'=>$request->password,
      ]);
     
      return redirect()->route('bb.customer.list');

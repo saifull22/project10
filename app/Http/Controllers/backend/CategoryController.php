@@ -14,14 +14,14 @@ class CategoryController extends Controller
     {
 
 //return view('backend.page.category');
-$category=category::all();
-return view('backend.page.categorylist', compact('category'));
+$category=category::paginate(5);
+return view('backend.page.category.categorylist', compact('category'));
 }
 
 public function createFrom()
 {
 
-return view('backend.page.createFrom');
+return view('backend.page.category.categoryFrom');
 
 }
 
@@ -43,7 +43,35 @@ public function view($id)
 
     $category=category::find($id);
 
-    return view('backend.page.categoryview',compact('category'));
+    return view('backend.page.category.categoryview',compact('category'));
+}
+
+public function editcategory($id)
+{
+$category=category::find($id);
+
+return view('backend.page.category.categoryedit',compact('category'));
+
+
+}
+
+public function updatecategory(Request $request,$id)
+{
+    $category=Category::find($id)->update([
+
+    'Firstname'=>$request->Firstname,
+    'Lastname'=>$request->Lastname,
+   
+]);
+return redirect()->route('aa.category.list');
+}
+
+public function delete($id)
+{
+Category::find($id)->delete();
+return back();
+
+
 }
 
 

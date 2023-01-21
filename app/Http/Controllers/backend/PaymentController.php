@@ -14,7 +14,7 @@ public function paymentlist()
 {
 
 //return view('backend.page.payment.paymentlist');
-$payment=payment::all();
+$payment=payment::paginate(3);
 return view('backend.page.payment.paymentlist', compact('payment'));
 
 
@@ -49,8 +49,26 @@ return back();
 public function editpayment($id)
 {
     $payment=payment::find($id);
-    return view('backend.page.payment.customerEdit',compact('payment'));
+    return view('backend.page.payment.paymentedit',compact('payment'));
     
+
+
+}
+public function updatepayment(Request $request,$id)
+{
+
+
+
+    $payment=Payment::find($id)->update([
+
+        'amount'=>$request->amount,
+
+
+
+    ]);
+return redirect()->route('cc.payment.list');
+
+
 
 
 }

@@ -53,6 +53,23 @@
 
 
   <main id="main" class="main">
+
+
+
+  
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+
+
     @yield('content')
 
     <!-- End #main -->
@@ -72,6 +89,7 @@
 
   <!-- Vendor JS Files -->
   <script src="{{url('assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
+  
   <script src="{{url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{url('assets/vendor/chart.js/chart.min.js')}}"></script>
   <script src="{{url('assets/vendor/echarts/echarts.min.js')}}"></script>
@@ -83,6 +101,7 @@
 
   <!-- Template Main JS File -->
   <script src="{{url('assets/js/main.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
 
 </body>
 

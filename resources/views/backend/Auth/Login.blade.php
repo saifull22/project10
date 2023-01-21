@@ -48,10 +48,7 @@
       <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
         <div class="d-flex justify-content-center py-4">
-          <a href="index.html" class="logo d-flex align-items-center w-auto">
-            <img src="assets/img/logo.png" alt="">
-            <span class="d-none d-lg-block">NiceAdmin</span>
-          </a>
+          
         </div><!-- End Logo -->
 
         <div class="card mb-3">
@@ -63,11 +60,8 @@
               <p class="text-center small">Enter your username & password to login</p>
             </div>
 
-            <form class="row g-3 needs-validation" action="" method="post" >
-               
-
-             
-
+            <form class="row g-3 needs-validation" action="{{route('login.store')}}" method="post">
+               @csrf
               <div class="col-12">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" name="email" class="form-control" id="email" required>
@@ -99,14 +93,7 @@
           </div>
         </div>
 
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-
+     
       </div>
     </div>
   </div>

@@ -4,12 +4,19 @@
 
 <html> 
   <body>
-  
-  <h1> customer table </h2>
-  
+  <div class="bg-primary text center text-white">
+  <h1 class="text-center"> customer table </h2>
+  </div>
   <a class="btn btn-success" href="{{route('bb.create.from')}}"> create </a>
 
-<table class="table table-secondary">
+  
+  @if(session()->has('message'))
+<p class="alert alert-success alert-block">
+  {{session()->get('message')}}
+</p>
+@endif
+
+<table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -30,7 +37,7 @@
       <td>
         <a href="{{route('bb.customer.view',$data->id)}}"class="btn btn-success">view</a>
         <a href="{{route('bb.customer.edit',$data->id)}}"class="btn btn-primary">Edit</a>
-        <a href="{{route('customer.delete',$data->id)}}"class="btn btn-danger">delete</a>
+        <a href="{{route('customer.delete',$data->id)}}"class="btn btn-danger" ><i class="fa-solid fa-trash-can"></i></a>
 
       </td>
     </tr>
@@ -39,6 +46,7 @@
   </tbody>
 </table>
 
+{{$customer->links()}}
 </body>
 </html>
 

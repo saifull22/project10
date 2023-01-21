@@ -1,11 +1,13 @@
-@extents('backend.master')
+@extends('backend.master')
 @section('content')
 
 
 
 <div class="container">
-<form action="{{route('dd.order.edit'$order->id)}}" method="post">
+
+<form action="{{(route('dd.order.update',$order->id))}}" method="post">
    @csrf
+   @method('PUT')
   <div class=" form-group mb-3">
     <label for="order_status">order_status</label>
     <input type="text" name="order_status" class="form-control" id="order_status" value"{{$order->order_status}}">
@@ -18,7 +20,7 @@
 
   <div class="form-group mb-3">
     <label for="status">status</label>
-    <input type="text" name="status" class="form-control" id="status"value"{{$status->status}}">
+    <input type="text" name="status" class="form-control" id="status" value"{{$order->status}}">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>

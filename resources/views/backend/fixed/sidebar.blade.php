@@ -6,10 +6,12 @@
       <li class="nav-item">
         <a class="nav-link " href="index.html">
           <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+          <span>Ad-------min</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
+
+      
       <li class="nav-item">
         <a class="nav-link " href="{{route('aa.category.list')}}">
           <i class="bi bi-grid"></i>
@@ -48,14 +50,14 @@
 
      
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="{{route('hh.orderdetails.list')}}">
           <i class="bi bi-grid"></i>
           <span>order Detall</span>
         </a>
       </li
 
       <li class="nav-item">
-        <a class="nav-link " href="{{route('product.list')}}">
+        <a class="nav-link " href="{{route('gg.product.list')}}">
           <i class="bi bi-grid"></i>
           <span>product</span>
         </a>
@@ -70,6 +72,25 @@
       </li
 
         
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('ff.wish.list')}}">
+        <i class="bi bi-grid"></i>
+        <span>Wish List</span>
+        </a>
+      </li>
+
+
+<li class="nav-item">
+<a class="nav-link"href="">
+<i class="bi bi-grid"></i>
+<span>Store</span>
+</a>
+
+</li>
+
+
+
+
 
 
     </ul>

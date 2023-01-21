@@ -3,14 +3,18 @@
 @section('content')
 <head>
     <body>
-        <h1> Order table </h1>
+        <div class="bg-primary text-center text-white">
+             <h1> Order table </h1>
+        </div>
 
         <a class ="btn btn-success"href="{{route('dd.create.from')}}"> create</a>
+      
 
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">id</th>
+      <th scope="col">order_status</th>
       <th scope="col">email</th>
       <th scope="col">address</th>
       <th scope="col">action</th>
@@ -26,8 +30,9 @@
 
 
       <td>
-      <a href="{{route('order.delete',$date->id)}}"class="btn btn-danger">delete</a>
+      <a href="{{route('dd.order.delete',$date->id)}}"class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
       <a href="{{route('dd.order.edit',$date->id)}}"class="btn btn-primary">Edit</a>
+      <a herf="{{route('dd.order.view',$date->id)}}"class="btn btn-success">View</a>
       </td>
 
 
@@ -37,6 +42,8 @@
   </tbody>
 </table>
 
+
+{{$Order->links()}}
 </body>
 </head>
 @endsection
